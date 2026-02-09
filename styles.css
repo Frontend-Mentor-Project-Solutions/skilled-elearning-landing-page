@@ -1,0 +1,129 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --clr-blue-900: hsl(233, 54%, 16%);
+  --clr-blue-600: hsl(234, 25%, 52%);
+
+  --clr-pink-600: hsl(341, 92%, 62%);
+  --clr-pink-300: hsl(341, 100%, 83%);
+
+  --clr-grey: hsl(232, 10%, 56%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --gradient-pink: linear-gradient(0deg, hsl(322 87 55), hsl(13 100 64));
+  --gradient-purple: linear-gradient(0deg, hsl(322 87 55), hsl(237 100 64));
+  --gradient-white: linear-gradient(
+    180deg,
+    var(--clr-white),
+    hsl(236deg 100% 97%)
+  );
+
+  --fs-heading-1: clamp(2.5rem, -0.5rem + 6.25vw, 3.5rem);
+  --fs-heading-2: clamp(1.5rem, 0rem + 3.125vw, 2rem);
+  --fs-heading-3: clamp(1.25rem, 0.5rem + 1.563vw, 1.5rem);
+  --fs-body: clamp(1rem, 0.792rem + 0.694vw, 1.125rem);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--clr-grey);
+  background-image: var(--gradient-white);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--clr-blue-900);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--fs-heading-1);
+}
+
+h2 {
+  font-size: var(--fs-heading-2);
+}
+
+h3 {
+  font-size: var(--fs-heading-3);
+}
+
+a {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
