@@ -124,10 +124,31 @@ a {
 
 /* layouts */
 
+.content-grid {
+  --content-max-width: 1120px;
+  --padding-inline: 1.25rem;
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start]
+    minmax(var(--padding-inline), 1fr)
+    [content-start]
+    min(100% - (var(--padding-inline) * 2), var(--content-max-width))
+    [content-end]
+    minmax(var(--padding-inline), 1fr)
+    [full-width-end];
+
+  > * {
+    grid-column: content;
+  }
+}
+
 .courses {
   display: grid;
   column-gap: 1.5rem;
   row-gap: 3.5rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 .card {
@@ -160,8 +181,7 @@ a {
   color: var(--clr-pink-600);
 }
 
-header,
-footer {
+.flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -176,4 +196,12 @@ footer {
   background-color: var(--clr-white);
   border-radius: 1rem;
   padding: 2rem;
+}
+
+.featured {
+  background-image: var(--gradient-pink);
+
+  > * {
+    color: var(--clr-white);
+  }
 }
