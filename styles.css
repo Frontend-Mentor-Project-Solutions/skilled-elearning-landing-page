@@ -91,7 +91,7 @@ body {
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: var(--fs-body);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--clr-grey);
   background-image: var(--gradient-white);
 }
@@ -124,7 +124,6 @@ a {
 
 .hero-content p {
   font-size: 1.125rem;
-  font-weight: 500;
 }
 
 /* layouts */
@@ -225,6 +224,7 @@ a {
 
 footer {
   background-color: var(--clr-blue-900);
+  margin-block-start: clamp(0rem, -8.333rem + 27.778vw, 5rem);
 }
 
 header {
@@ -235,6 +235,8 @@ header {
   background-color: var(--clr-white);
   border-radius: 1rem;
   padding: 2rem;
+  padding-block-start: 3rem;
+  position: relative;
 }
 
 .featured {
@@ -243,4 +245,37 @@ header {
   > * {
     color: var(--clr-white);
   }
+}
+
+[data-icon="./assets/icons/icon-animation.svg"] {
+  --card-icon: url("./assets/icons/icon-animation.svg");
+}
+
+[data-icon="./assets/icons/icon-design.svg"] {
+  --card-icon: url("./assets/icons/icon-design.svg");
+}
+
+[data-icon="./assets/icons/icon-photography.svg"] {
+  --card-icon: url("./assets/icons/icon-photography.svg");
+}
+
+[data-icon="./assets/icons/icon-crypto.svg"] {
+  --card-icon: url("./assets/icons/icon-crypto.svg");
+}
+
+[data-icon="./assets/icons/icon-business.svg"] {
+  --card-icon: url("./assets/icons/icon-business.svg");
+}
+
+[data-icon]::before {
+  content: "";
+  background-image: var(--card-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 3.5rem;
+  height: 3.5rem;
+  position: absolute;
+  top: -1.75rem;
+  left: 2rem;
 }
